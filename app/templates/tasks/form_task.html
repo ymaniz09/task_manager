@@ -1,10 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load filters %}
 
-</body>
-</html>
+{% block content %}
+    <form method="post">
+
+        {% csrf_token  %}
+
+        <div class="form-group">
+            {{ task_form.title.errors }}
+            <label>Title:</label>
+            {{ task_form.title|addclass:'form-control' }}
+        </div>
+
+        <div class="form-group">
+            {{ task_form.description.errors }}
+            <label>Description:</label>
+            {{ task_form.description|addclass:'form-control' }}
+        </div>
+
+
+        <div class="form-group">
+            {{ task_form.expiration_date.errors }}
+            <label>Expiration Date:</label>
+            {{ task_form.expiration_date|addclass:'form-control' }}
+        </div>
+
+
+        <div class="form-group">
+            {{ task_form.priority.errors }}
+            <label>Priority:</label>
+            {{ task_form.priority|addclass:'form-control' }}
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Save">
+        </div>
+    </form>
+{% endblock content %}
