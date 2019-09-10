@@ -6,3 +6,7 @@ def store_task(task):
                          description=task.description,
                          expiration_date=task.expiration_date,
                          priority=task.priority)
+
+
+def list_tasks():
+    return Tasks.objects.all()

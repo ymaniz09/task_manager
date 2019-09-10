@@ -3,5 +3,18 @@
 {% block content %}
     <h1>Task List</h1>
 
-    <h2>{{ task_name }}</h2>
+    {% for task in tasks %}
+        <div class="card mb-3">
+            <div class="card-header">
+                {{ task.get_priority_display}}
+            </div>
+
+            <div class="card-body">
+                <h5 class="card-title">{{ task.title }}</h5>
+                <p class="card-text"> {{ task.description }}</p>
+            </div>
+        </div>
+
+    {% endfor %}
+<a href="{% url 'add_tasks' %}"><input type="button" class="btn btn-primary mb-3" value="Add Task"></a>
 {% endblock content %}

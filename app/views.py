@@ -2,13 +2,12 @@ from django.shortcuts import render, redirect
 
 from app.entities.task import Task
 from .forms import TaskForm
-from .services.task_service import store_task
+from .services import task_service
 
 
 # Create your views here.
 def list_tasks(request):
-    task_name = "Finish Django project"
-    return render(request, 'tasks/list_tasks.html', {'task_name': task_name})
+    return render(request, 'tasks/list_tasks.html', {'tasks': task_service.list_tasks()})
 
 
 def add_task(request):
@@ -21,7 +20,8 @@ def add_task(request):
             expiration_date = task_form.cleaned_data["expiration_date"]
             priority = task_form.cleaned_data["priority"]
 
-            store_task(Task(title=title, description=description, expiration_date=expiration_date, priority=priority))
+            task_service.store_task(
+                Task(title=title, description=description, expiration_date=expiration_date, priority=priority))
 
             return redirect('list_tasks')
 
