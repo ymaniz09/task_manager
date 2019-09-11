@@ -6,15 +6,17 @@
     {% for task in tasks %}
         <div class="card mb-3">
             <div class="card-header">
-                {{ task.get_priority_display}}
+                {{ task.get_priority_display }}
             </div>
 
             <div class="card-body">
                 <h5 class="card-title">{{ task.title }}</h5>
                 <p class="card-text"> {{ task.description }}</p>
+                <br>
+                <a href="{% url 'edit_tasks' task.id %}">Edit Task</a>
             </div>
         </div>
 
     {% endfor %}
-<a href="{% url 'add_tasks' %}"><input type="button" class="btn btn-primary mb-3" value="Add Task"></a>
+    <a href="{% url 'add_tasks' %}"><input type="button" class="btn btn-primary mb-3" value="Add Task"></a>
 {% endblock content %}

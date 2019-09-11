@@ -28,3 +28,21 @@ def add_task(request):
     else:
         task_form = TaskForm(request.POST)
         return render(request, 'tasks/form_task.html', {'task_form': task_form})
+
+
+def edit_task(request, task_id):
+    stored_task = task_service.list_task_id(task_id)
+    task_form = TaskForm(request.POST or None, instance=stored_task)
+
+    if task_form.is_valid():
+        title = task_form.cleaned_data["title"]
+        description = task_form.cleaned_data["description"]
+        expiration_date = task_form.cleaned_data["expiration_date"]
+        priority = task_form.cleaned_data["priority"]
+
+        edited_task = Task(title=title, description=description, expiration_date=expiration_date, priority=priority)
+        task_service.edit_task(stored_task, edited_task)
+
+        return redirect('list_tasks')
+
+    return render(request, 'tasks/form_task.html', {'task_form': task_form})
