@@ -22,3 +22,7 @@ def edit_task(stored_task, edited_task):
     stored_task.expiration_date = edited_task.expiration_date
     stored_task.priority = edited_task.priority
     stored_task.save(force_update=True)
+
+
+def remove_task(stored_task):
+    stored_task.delete()

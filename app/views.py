@@ -46,3 +46,13 @@ def edit_task(request, task_id):
         return redirect('list_tasks')
 
     return render(request, 'tasks/form_task.html', {'task_form': task_form})
+
+
+def remove_task(request, task_id):
+    stored_task = task_service.list_task_id(task_id)
+
+    if request.method == "POST":
+        task_service.remove_task(stored_task)
+        return redirect('list_tasks')
+
+    return render(request, 'tasks/confirm_exclusion.html', {'task': stored_task})

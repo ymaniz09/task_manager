@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3729d2bc-f031-47d3-8371-31cdc739abc1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/tasks/confirm_exclusion.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/task_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/task_service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/tasks/list_tasks.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/tasks/list_tasks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
@@ -24,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -109,7 +108,7 @@
       <workItem from="1568117478211" duration="12768000" />
       <workItem from="1568201896629" duration="68000" />
       <workItem from="1568201978360" duration="2925000" />
-      <workItem from="1568220394914" duration="2413000" />
+      <workItem from="1568220394914" duration="3905000" />
     </task>
     <servers />
   </component>
@@ -128,16 +127,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app/views.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
