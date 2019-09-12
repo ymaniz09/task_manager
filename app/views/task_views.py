@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
 from app.entities.task import Task
-from .forms import TaskForm
-from .services import task_service
+from app.forms import TaskForm
+from app.services import task_service
 
 
 # Create your views here.
